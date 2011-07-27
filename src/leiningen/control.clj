@@ -60,6 +60,7 @@
     (case subtask
       "init" (apply init project args)
       "run" (apply run project args)
-      "show" (apply show project args))))
+      "show" (apply show project args)
+      (println (help-for "control")))))
 
 
