@@ -1,5 +1,5 @@
 (ns leiningen.control
-  (:use [control.core :only (do-begin)]
+  (:use [control.core :only (do-begin clusters)]
            [leiningen.help :only (help-for)]
            [clojure.java.io :only [file]]))
 
@@ -40,15 +40,26 @@
   [project & args]
   (run-control project args))
 
+(defn show
+  "Show cluster info"
+  [project & args]
+  (do 
+    (load-control-file project)
+    (if-let [cluster-name (first args)] 
+      (doseq
+        [c (:clients ((keyword cluster-name) @clusters))]
+        (println (str (:user c) "@" (:host c)))))))
+
 (defn control
   "Leiningen plugin for Clojure-Control"
   {:help-arglists '([subtask [cluster task [args...]]])
-   :subtasks [#'init #'run]}
+   :subtasks [#'init #'run #'show]}
   ([project]
     (println (help-for "control")))
   ([project subtask & args]
     (case subtask
       "init" (apply init project args)
-      "run" (apply run project args))))
+      "run" (apply run project args)
+      "show" (apply show project args))))
 
 
