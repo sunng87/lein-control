@@ -42,8 +42,10 @@
 
 (defn control
   "Leiningen plugin for Clojure-Control"
-  {:help-arglists '([cluster task args...])
+  {:help-arglists '([subtask [cluster task [args...]]])
    :subtasks [#'init #'run]}
+  ([project]
+    (println (help-for "control")))
   ([project subtask & args]
     (case subtask
       "init" (apply init project args)
