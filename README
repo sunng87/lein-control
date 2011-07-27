@@ -10,21 +10,26 @@ Include the plugin in your project.clj
     (defproject YOUR-PROJECT-NAME "1.0.0-SNAPSHOT"
         :dev-dependency [[lein-control "0.1.0"]])
 
-Create a control file in your project home, named as `control.clj`.
-If you have a custom name for this file, you have to add the config 
-option in your project.clj
+Generate a sample control file with:
+
+    lein control init
+
+There will be a `control.clj` in your project home.
+
+To define a custom control file, you have to specify the path to it in 
+your project.clj
 
     :control {:control-file "YOUR-FILE-NAME"}
 
-You can find a sample control file in clojure-control project.
-The differences are:
+You can also find a sample control file in clojure-control project.
+But there are some differences for lein-control:
 
 * you don't have to add any (ns) (require) for lein-control
 * you SHOULD NOT add (begin) in this file, lein-control will add it for you.
 
 Now, you can run your task with:
 
-    lein control your-cluster your-task [args...]
+    lein control run your-cluster your-task [args...]
 
 ## License
 
