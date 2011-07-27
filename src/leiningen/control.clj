@@ -1,5 +1,4 @@
 (ns leiningen.control
-  (:use [leiningen.help :only (help-for)])
   (:use [leiningen.compile :only (eval-in-project)])
   (:use [control.core :only (do-begin)]))
 
@@ -17,7 +16,7 @@
   "run user-defined clojure-control tasks"
   {}
   ([project]
-    (println (help-for "control")))
+    (println "Usage: lein control cluster task [args...]"))
   ([project & args]
     (load-control-file project)
     (do-begin args)))
