@@ -31,6 +31,10 @@ Now, you can run your task with:
 
     lein control run your-cluster your-task [args...]
 
+Check your cluster configuration:
+
+    lein control show your-cluster
+
 ## License
 
 Copyright (C) 2011 Sun Ning <classicning@gmail.com>
