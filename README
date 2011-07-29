@@ -27,13 +27,13 @@ But there are some differences for lein-control:
 * you don't have to add any (ns) (require) for lein-control
 * you SHOULD NOT add (begin) in this file, lein-control will add it for you.
 
-Now, you can run your task with:
-
-    lein control run your-cluster your-task [args...]
-
 Check your cluster configuration:
 
     lein control show your-cluster
+
+Now, you can run your task with:
+
+    lein control run your-cluster your-task [args...]
 
 ## License
 
