@@ -1,4 +1,4 @@
-(defproject lein-control "0.1.0"
+(defproject lein-control "0.1.1"
   :description "leiningen clojure-control plugin"
   :author "Sun Ning <classicning@gmail.com>"
   :dependencies [[org.clojure/clojure "1.2.1"]
