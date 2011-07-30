@@ -1,14 +1,15 @@
 (ns leiningen.control
-  (:use [control.core :only (do-begin clusters)]
-           [leiningen.help :only (help-for)]
-           [clojure.java.io :only [file]]))
+  (:use [control.core :only [do-begin clusters]]
+           [leiningen.help :only [help-for]]
+           [clojure.java.io :only [file]]
+           [leiningen.control.parser]))
 
 (defn- get-config [project key]
   (get-in project [:control key]))
 
 (defn- load-control-file [project]
   (try 
-    (binding [*ns* (the-ns 'control.core)]
+    (binding [*ns* (the-ns 'leiningen.control.parser)]
       (load-file
         (if-let [control-file-name (get-config project :control-file)]
           control-file-name "./control.clj")))
