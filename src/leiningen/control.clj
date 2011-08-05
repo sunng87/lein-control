@@ -11,8 +11,9 @@
   (try 
     (binding [*ns* (the-ns 'leiningen.control.parser)]
       (load-file
-        (if-let [control-file-name (get-config project :control-file)]
-          control-file-name "./control.clj")))
+        (or 
+          (get-config project :control-file)
+          "./control.clj")))
   (catch java.io.FileNotFoundException e (println "control file not found."))))
 
 (defn- run-control [project args]
