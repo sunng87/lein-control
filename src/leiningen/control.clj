@@ -33,7 +33,7 @@
           "    {:host \"localhost\" :user \"root\"}\n"
           "  ])\n"
           "\n"
-          "(deftask :date \"Get date\""
+          "(deftask :date \"echo date on cluster\""
           "  []\n"
           "  (ssh \"date\"))\n")))))
 

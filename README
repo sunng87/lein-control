@@ -8,7 +8,9 @@ A leiningen plugin for clojure-control.
 Include the plugin in your project.clj
 
     (defproject YOUR-PROJECT-NAME "1.0.0-SNAPSHOT"
-        :dev-dependencies [[lein-control "0.1.1"]])
+        :dev-dependencies [[lein-control "0.2.1-SNAPSHOT"]])
+
+lein-control 0.2.1 is compatible with clojure-control 0.2.1 .
 
 Generate a sample control file with:
 
