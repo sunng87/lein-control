@@ -1,3 +1,3 @@
 (ns leiningen.control.parser
-  (:use [control.core])
+  (:use [control core commands])
   )
