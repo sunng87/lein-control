@@ -1,15 +1,19 @@
 (ns leiningen.control
   (:use [control.core :only [do-begin clusters]]
            [leiningen.help :only [help-for]]
-           [clojure.java.io :only [file]]
-           [leiningen.control.parser]))
+           [clojure.java.io :only [file]]))
 
 (defn- get-config [project key]
   (get-in project [:control key]))
 
+(defn- create-control-ns []
+  (create-ns (gensym "user-control")))
+
 (defn- load-control-file [project]
   (try 
-    (binding [*ns* (the-ns 'leiningen.control.parser)]
+    (binding [*ns* (create-control-ns)]
+      (refer-clojure)
+      (use '[control core commands])
       (load-file
         (or 
           (get-config project :control-file)
