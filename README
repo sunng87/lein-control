@@ -3,6 +3,17 @@
 A leiningen plugin for clojure-control.
 (https://github.com/killme2008/clojure-control).
 
+## CAUTION !!
+
+From clojure-control 0.2.3, the lein plugin has been merged into the toolkit. So this project is no longer maintained.
+To install the plugin, just run:
+
+    lein plugin install control 0.2.3
+
+or add control to your dev-depenendencies"
+
+    :dev-dependencies [[control "0.2.3"]]
+
 ## Usage
 
 Include the plugin in your project.clj
