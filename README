@@ -16,13 +16,6 @@ or add control to your dev-depenendencies"
 
 ## Usage
 
-Include the plugin in your project.clj
-
-    (defproject YOUR-PROJECT-NAME "1.0.0-SNAPSHOT"
-        :dev-dependencies [[lein-control "0.2.1"]])
-
-lein-control 0.2.1 is compatible with clojure-control 0.2.1 .
-
 Generate a sample control file with:
 
     lein control init
